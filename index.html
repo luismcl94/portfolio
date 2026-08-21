@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -15,39 +15,42 @@
 </head>
 
 <body>
+
+<div class="language-switcher">
+    <button onclick="setLanguage('en')">🇺🇸 English</button>
+    <button onclick="setLanguage('es')">🇪🇸 Español</button>
+</div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Hola, soy <span>Luis Castañeda</span></h1>
-            <p class="tagline">Desarrollador Full Stack</p>
-            <p>Estudiante de Ingeniería en Desarrollo de Software en la UVEG, con experiencia en desarrollo web y
-                programación con Java, Spring-Boot.</p>
+            <img src="images/foto-de-perfil.jpeg" alt="Foto de perfil" class="profile-pic">
+            <h1>Hi, i’m <span>Luis Castañeda</span></h1>
+            <p class="tagline">Full Stack Developer</p>
+            <p>Student of Software Engineering at UVEG, with experience in programming with Java and Spring-Boot.</p>
             <div class="cta">
-                <a href="#About" class="btn-secondary">Sobre mí</a>
-                <a href="#Projects" class="btn-primary">Ver mis proyectos</a>
-                <a href="#Contact" class="btn-secondary">Hablemos</a>
+                <a href="#Projects" class="btn-primary">View my projects</a>
+                <a href="#About" class="btn-secondary">About me</a>
+                <a href="#Contact" class="btn-secondary">Let's talk</a>
+                <a href="https://github.com/luismcl94" class="btn-secondary" target="_blank"><img src="images/logotipo-de-github.png" class="icon"></a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="About">
-        <h2>Sobre mí</h2>
-        <p>...</p>
-    </section>
-
     <!-- Projects Section -->
     <section id="Projects">
-        <h2>Mis proyectos</h2>
+        <h2>My Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>API REST con Spring Boot</h3>
-                <p>API RESTful con autenticación JWT, manejo de excepciones y
-                    conexión a PostgreSQL.</p>
+                <h3>DocFlow</h3>
+                <p>Aplicación para la gestión y trámite de documentos en entornos corporativos.</p>
                 <div class="tech-tags">
                     <span>Java</span>
-                    <span>Spring Boot</span>
-                    <span>PostgreSQL</span>
+                    <span>Spring-Boot</span>
+                    <span>PDFBox</span>
+                    <span>JPA</span>
+                    <span>MySQL</span>
+                    <span>Thymeleaf</span>
                 </div>
                 <a href="#">Ver código →</a>
             </div>
@@ -79,40 +82,67 @@
         </div>
     </section>
 
+       <!-- About Section -->
+    <section id="About">
+        <h2>About Me</h2>
+        <div class="about-me">
+            <p>I’m Luis Miguel Castañeda López, a Software Development Engineering student at UVEG and a Full-Stack Developer with a strong focus on backend development.</p><br>
+            <p>While I’m still building my professional experience in the IT industry, I’ve developed several personal projects using technologies such as Java, Spring Boot, MySQL, MariaDB, Git, and GitHub. These projects have allowed me to put my knowledge into practice and strengthen my skills in software development, databases, APIs, and version control.</p><br>
+            <p>I’m passionate about learning, solving problems, and building reliable software while continuously improving my technical skills.</p><br>
+        </div>
+    </section>
+
     <section id="Skills">
-        <h2>Habilidades</h2>
+        <h2>Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>Backend</h3>
-                <p>Experiencia en desarrollo de aplicaciones backend con Java y Spring Boot.</p>
+                <div class="tech-tags">
+                    <span><img src="images/logotipo-de-java.png" alt="Java" class="icon"> Java</span>
+                    <span><img src="images/logotipo-de-spring.png" alt="Spring" class="icon"> Spring Boot</span>
+                    <span><img src="images/logotipo-de-mysql.png" alt="MySQL" class="icon"> MySQL</span>
+                </div>
             </div>
             <div class="skill-card">
                 <h3>Frontend</h3>
-                <p>Creación de APIs RESTful, manejo de seguridad y persistencia de datos.</p>
+                <div class="tech-tags">
+                    <span><img src="images/logotipo-de-html.png" alt="HTML" class="icon"> HTML</span>
+                    <span><img src="images/logotipo-de-css.png" alt="CSS" class="icon"> CSS</span>
+                    <span><img src="images/logotipo-de-javascript.png" alt="JavaScript" class="icon"> JavaScript</span>
+                    <span><img src="images/logotipo-de-thymeleaf.png" alt="Thymeleaf" class="icon"> Thymeleaf</span>
+                </div>
             </div>
             <div class="skill-card">
                 <h3>DevOps & Tools</h3>
-                <p>Conocimientos en HTML, CSS y JavaScript para crear interfaces atractivas.</p>
+                <div class="tech-tags">
+                    <span><img src="images/logotipo-de-docker.png" alt="Docker" class="icon"> Docker</span>
+                    <span><img src="images/logotipo-de-git.png" alt="Git" class="icon"> Git</span>
+                    <span><img src="images/logotipo-de-github.png" alt="GitHub" class="icon"> GitHub</span>
+                </div>
             </div>
             <div class="skill-card">
-                <h3>En aprendisaje</h3>
-                <p>Experiencia con PostgreSQL, MySQL y MongoDB para almacenamiento de datos.</p>
+                <h3>Currently Learning & Exploring</h3>
+                <div class="tech-tags">
+                    <span><img src="images/logotipo-de-mongodb.png" alt="MongoDB" class="icon"> MongoDB</span>
+                    <span><img src="images/logotipo-de-postgresql.png" alt="PostgreSQL" class="icon"> PostgreSQL</span>
+                    <span><img src="images/logotipo-de-redis.png" alt="Redis" class="icon"> Redis</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="Contact">
-        <h2>Hablemos</h2>
-        <p>¿Tienes un proyecto en mente? Estoy abierto a nuevas oportunidades</p>
+        <h2>Let's talk</h2>
+        <p>Do you have a project in mind? I'm open to new opportunities</p>
 
         <div class="contact-links">
-            <a href="mailto:tu@email.com"><img src="gmail.png" alt="" class="icon"> Email</a>
-            <a href="https://linkedin.com/in/tu-perfil"><img src="linkedin.png" alt="" class="icon"> LinkedIn</a>
-            <a href="https://github.com/tu-usuario"><img src="logotipo-de-github.png" alt="" class="icon"> GitHub</a>
+            <a href="#" onclick="copyEmail(event, this)"><img src="images/correo-electronico.png" alt="Email" class="icon"><span>Email</span></a>
+            <a href="https://linkedin.com/in/tu-perfil"><img src="images/linkedin.png" alt="" class="icon"> LinkedIn</a>
+            <a href="https://github.com/luismcl94" target="_blank"><img src="images/logotipo-de-github.png" alt="" class="icon"> GitHub</a>
         </div>
     </section>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

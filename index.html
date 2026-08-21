@@ -17,21 +17,21 @@
 <body>
 
 <div class="language-switcher">
-    <button onclick="setLanguage('en')">🇺🇸 English</button>
-    <button onclick="setLanguage('es')">🇪🇸 Español</button>
+    <button id="btn-en" onclick="setLanguage('en')">🇺🇸 English</button>
+    <button id="btn-es" onclick="setLanguage('es')">🇪🇸 Español</button>
 </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <img src="images/foto-de-perfil.jpeg" alt="Foto de perfil" class="profile-pic">
-            <h1>Hi, i’m <span>Luis Castañeda</span></h1>
-            <p class="tagline">Full Stack Developer</p>
-            <p>Student of Software Engineering at UVEG, with experience in programming with Java and Spring-Boot.</p>
+            <h1 data-i18n="hero-title">Hi, i’m <span>Luis Castañeda</span></h1>
+            <p class="tagline" data-i18n="hero-tagline">Full Stack Developer</p>
+            <p data-i18n="hero-desc">Student of Software Engineering at UVEG, with experience in programming with Java and Spring-Boot.</p>
             <div class="cta">
-                <a href="#Projects" class="btn-primary">View my projects</a>
-                <a href="#About" class="btn-secondary">About me</a>
-                <a href="#Contact" class="btn-secondary">Let's talk</a>
+                <a href="#Projects" class="btn-primary" data-i18n="hero-btn-projects">View my projects</a>
+                <a href="#About" class="btn-secondary" data-i18n="hero-btn-about">About me</a>
+                <a href="#Contact" class="btn-secondary" data-i18n="hero-btn-contact">Let's talk</a>
                 <a href="https://github.com/luismcl94" class="btn-secondary" target="_blank"><img src="images/logotipo-de-github.png" class="icon"></a>
             </div>
         </div>
@@ -39,11 +39,11 @@
 
     <!-- Projects Section -->
     <section id="Projects">
-        <h2>My Projects</h2>
+        <h2 data-i18n="projects-title">My Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <h3>DocFlow</h3>
-                <p>Aplicación para la gestión y trámite de documentos en entornos corporativos.</p>
+                <p data-i18n="project-docflow-desc">Aplicación para la gestión y trámite de documentos en entornos corporativos.</p>
                 <div class="tech-tags">
                     <span>Java</span>
                     <span>Spring-Boot</span>
@@ -52,31 +52,29 @@
                     <span>MySQL</span>
                     <span>Thymeleaf</span>
                 </div>
-                <a href="#">Ver código →</a>
+                <a href="#" data-i18n="project-code">Ver código →</a>
             </div>
 
             <div class="project-card">
                 <h3>Microservicio con Spring Cloud</h3>
-                <p>Arquitectura de microservicios con Eureka, Gateway y
-                    comunicación entre servicios.</p>
+                <p data-i18n="project-microservice-desc">Arquitectura de microservicios con Eureka, Gateway y comunicación entre servicios.</p>
                 <div class="tech-tags">
                     <span>Spring Cloud</span>
                     <span>Docker</span>
                     <span>MongoDB</span>
                 </div>
-                <a href="#">Ver código →</a>
+                <a href="#" data-i18n="project-code">Ver código →</a>
             </div>
 
             <div class="project-card">
                 <h3>Sistema de Gestión</h3>
-                <p>CRUD completo con Spring Data JPA, validaciones y
-                    seguridad con Spring Security.</p>
+                <p data-i18n="project-crud-desc">CRUD completo con Spring Data JPA, validaciones y seguridad con Spring Security.</p>
                 <div class="tech-tags">
                     <span>Spring Data</span>
                     <span>Spring Security</span>
                     <span>MySQL</span>
                 </div>
-                <a href="#">Ver código →</a>
+                <a href="#" data-i18n="project-code">Ver código →</a>
             </div>
             <!-- Agrega más proyectos según sea necesario -->
         </div>
@@ -84,16 +82,16 @@
 
        <!-- About Section -->
     <section id="About">
-        <h2>About Me</h2>
+        <h2 data-i18n="about-title">About Me</h2>
         <div class="about-me">
-            <p>I’m Luis Miguel Castañeda López, a Software Development Engineering student at UVEG and a Full-Stack Developer with a strong focus on backend development.</p><br>
-            <p>While I’m still building my professional experience in the IT industry, I’ve developed several personal projects using technologies such as Java, Spring Boot, MySQL, MariaDB, Git, and GitHub. These projects have allowed me to put my knowledge into practice and strengthen my skills in software development, databases, APIs, and version control.</p><br>
-            <p>I’m passionate about learning, solving problems, and building reliable software while continuously improving my technical skills.</p><br>
+            <p data-i18n="about-p1">I’m Luis Miguel Castañeda López, a Software Development Engineering student at UVEG and a Full-Stack Developer with a strong focus on backend development.</p><br>
+            <p data-i18n="about-p2">While I’m still building my professional experience in the IT industry, I’ve developed several personal projects using technologies such as Java, Spring Boot, MySQL, MariaDB, Git, and GitHub. These projects have allowed me to put my knowledge into practice and strengthen my skills in software development, databases, APIs, and version control.</p><br>
+            <p data-i18n="about-p3">I’m passionate about learning, solving problems, and building reliable software while continuously improving my technical skills.</p><br>
         </div>
     </section>
 
     <section id="Skills">
-        <h2>Skills</h2>
+        <h2 data-i18n="skills-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>Backend</h3>
@@ -115,7 +113,7 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>DevOps & Tools</h3>
+                <h3 data-i18n="skills-devops">DevOps & Tools</h3>
                 <div class="tech-tags">
                     <span><img src="images/logotipo-de-docker.png" alt="Docker" class="icon"> Docker</span>
                     <span><img src="images/logotipo-de-git.png" alt="Git" class="icon"> Git</span>
@@ -123,7 +121,7 @@
                 </div>
             </div>
             <div class="skill-card">
-                <h3>Currently Learning & Exploring</h3>
+                <h3 data-i18n="skills-learning">Currently Learning & Exploring</h3>
                 <div class="tech-tags">
                     <span><img src="images/logotipo-de-angular.png" alt="Angular" class="icon"> Angular</span>
                     <span><img src="images/logotipo-de-postgresql.png" alt="PostgreSQL" class="icon"> PostgreSQL</span>
@@ -134,11 +132,11 @@
 
     <!-- Contact Section -->
     <section id="Contact">
-        <h2>Let's talk</h2>
-        <p>Do you have a project in mind? I'm open to new opportunities</p>
+        <h2 data-i18n="contact-title">Let's talk</h2>
+        <p data-i18n="contact-desc">Do you have a project in mind? I'm open to new opportunities</p>
 
         <div class="contact-links">
-            <a href="#" onclick="copyEmail(event, this)"><img src="images/correo-electronico.png" alt="Email" class="icon"><span>Email</span></a>
+            <a href="#" onclick="copyEmail(event, this)"><img src="images/correo-electronico.png" alt="Email" class="icon"><span data-i18n="contact-email">Email</span></a>
             <a href="https://linkedin.com/in/tu-perfil"><img src="images/linkedin.png" alt="" class="icon"> LinkedIn</a>
             <a href="https://github.com/luismcl94" target="_blank"><img src="images/logotipo-de-github.png" alt="" class="icon"> GitHub</a>
         </div>

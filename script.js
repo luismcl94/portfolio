@@ -101,8 +101,28 @@ function copyEmail(event, element) {
         });
 }
 
+// Theme management
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+    
+    // Highlight active theme button
+    document.querySelectorAll('.theme-switcher button').forEach(button => {
+        if (button.getAttribute('data-theme-btn') === theme) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
 // Initial configuration
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    setTheme(savedTheme);
+
+    // Initialize Language
     const savedLang = localStorage.getItem('portfolio-lang');
     if (!savedLang) {
         const browserLang = navigator.language || navigator.userLanguage;

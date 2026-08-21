@@ -16,9 +16,15 @@
 
 <body>
 
-<div class="language-switcher">
-    <button id="btn-en" onclick="setLanguage('en')">🇺🇸 English</button>
-    <button id="btn-es" onclick="setLanguage('es')">🇪🇸 Español</button>
+<div class="top-controls">
+    <div class="theme-switcher">
+        <button id="btn-theme-dark" data-theme-btn="dark" onclick="setTheme('dark')">🌙</button>
+        <button id="btn-theme-light" data-theme-btn="light" onclick="setTheme('light')">☀️</button>
+    </div>
+    <div class="language-switcher">
+        <button id="btn-en" onclick="setLanguage('en')">🇺🇸 English</button>
+        <button id="btn-es" onclick="setLanguage('es')">🇪🇸 Español</button>
+    </div>
 </div>
 
     <!-- Hero Section -->

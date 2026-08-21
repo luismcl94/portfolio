@@ -12,14 +12,111 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --bg-color: #111111;
+    --text-color: #e8e8e8;
+    --text-muted: #a7a7a7;
+    --border-color: #252525;
+    
+    --card-bg: #171717;
+    --card-border: #292929;
+    --card-border-hover: #444444;
+    --card-title-color: #ffffff;
+    
+    --primary-color: #4da3ff;
+    --primary-hover: #78baff;
+    
+    --btn-primary-bg: #e8e8e8;
+    --btn-primary-text: #111111;
+    --btn-primary-hover-bg: #ffffff;
+    
+    --btn-secondary-border: #333333;
+    --btn-secondary-text: #cccccc;
+    --btn-secondary-hover-border: #555555;
+    --btn-secondary-hover-bg: #1a1a1a;
+    --btn-secondary-hover-text: #ffffff;
+    
+    --control-bg: #181818;
+    --control-border: #292929;
+    --control-btn-text: #999999;
+    --control-btn-hover-bg: #242424;
+    --control-btn-hover-text: #ffffff;
+    --control-btn-active-bg: #2a2a2a;
+    --control-btn-active-text: #ffffff;
+    
+    --tech-tag-bg: #222222;
+    --tech-tag-border: #303030;
+    --tech-tag-text: #aaaaaa;
+    
+    --profile-pic-border: #333333;
+    
+    --icon-filter: invert(1);
+    
+    --scrollbar-track: #111111;
+    --scrollbar-thumb: #333333;
+    --scrollbar-thumb-hover: #444444;
+    
+    --selection-bg: #4da3ff;
+    --selection-text: #111111;
+}
+
+[data-theme="light"] {
+    --bg-color: #f5f5f7;
+    --text-color: #1d1d1f;
+    --text-muted: #515154;
+    --border-color: #e2e2e5;
+    
+    --card-bg: #ffffff;
+    --card-border: #e2e2e5;
+    --card-border-hover: #c8c8cd;
+    --card-title-color: #1d1d1f;
+    
+    --primary-color: #0066cc;
+    --primary-hover: #0052a3;
+    
+    --btn-primary-bg: #1d1d1f;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover-bg: #000000;
+    
+    --btn-secondary-border: #d2d2d7;
+    --btn-secondary-text: #515154;
+    --btn-secondary-hover-border: #86868b;
+    --btn-secondary-hover-bg: #eaeaea;
+    --btn-secondary-hover-text: #1d1d1f;
+    
+    --control-bg: #ffffff;
+    --control-border: #d2d2d7;
+    --control-btn-text: #515154;
+    --control-btn-hover-bg: #f5f5f7;
+    --control-btn-hover-text: #1d1d1f;
+    --control-btn-active-bg: #e8e8ed;
+    --control-btn-active-text: #1d1d1f;
+    
+    --tech-tag-bg: #eaeaea;
+    --tech-tag-border: #d2d2d7;
+    --tech-tag-text: #515154;
+    
+    --profile-pic-border: #d2d2d7;
+    
+    --icon-filter: none;
+    
+    --scrollbar-track: #f5f5f7;
+    --scrollbar-thumb: #cccccc;
+    --scrollbar-thumb-hover: #aaaaaa;
+    
+    --selection-bg: #0066cc;
+    --selection-text: #ffffff;
+}
+
 body {
     font-family: 'Space Mono', monospace;
-    background: #111111;
-    color: #e8e8e8;
+    background: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.7;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 
@@ -49,7 +146,8 @@ h3 {
 }
 
 p {
-    color: #a7a7a7;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
 }
 
 a {
@@ -62,47 +160,49 @@ a {
    LANGUAGE SWITCHER
 ================================ */
 
-.language-switcher {
+.top-controls {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-
     display: flex;
-    gap: 0.4rem;
-
-    padding: 0.35rem;
-
-    background: #181818;
-    border: 1px solid #292929;
-    border-radius: 10px;
-
+    gap: 0.75rem;
     z-index: 1000;
 }
 
-.language-switcher button {
+.language-switcher,
+.theme-switcher {
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.35rem;
+    background: var(--control-bg);
+    border: 1px solid var(--control-border);
+    border-radius: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.language-switcher button,
+.theme-switcher button {
     background: transparent;
     border: none;
-
-    color: #999;
+    color: var(--control-btn-text);
     font-family: inherit;
     font-size: 0.8rem;
-
     padding: 0.45rem 0.7rem;
-
     border-radius: 7px;
     cursor: pointer;
-
     transition: 0.2s ease;
 }
 
-.language-switcher button:hover {
-    background: #242424;
-    color: #fff;
+.language-switcher button:hover,
+.theme-switcher button:hover {
+    background: var(--control-btn-hover-bg);
+    color: var(--control-btn-hover-text);
 }
 
-.language-switcher button.active {
-    background: #242424;
-    color: #fff;
+.language-switcher button.active,
+.theme-switcher button.active {
+    background: var(--control-btn-active-bg);
+    color: var(--control-btn-active-text);
     font-weight: 700;
 }
 
@@ -134,7 +234,8 @@ a {
 
     margin-bottom: 2rem;
 
-    border: 2px solid #333;
+    border: 2px solid var(--profile-pic-border);
+    transition: border-color 0.3s ease;
 }
 
 .hero h1 {
@@ -142,17 +243,19 @@ a {
 }
 
 .hero h1 span {
-    color: #4da3ff;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 .tagline {
     font-size: 1.2rem;
 
-    color: #4da3ff;
+    color: var(--primary-color);
 
     margin-bottom: 1.5rem;
 
     font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 .hero-content > p:not(.tagline) {
@@ -191,24 +294,24 @@ a {
 }
 
 .btn-primary {
-    background: #e8e8e8;
-    color: #111;
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
 }
 
 .btn-primary:hover {
-    background: #ffffff;
+    background: var(--btn-primary-hover-bg);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
-    border: 1px solid #333;
-    color: #ccc;
+    border: 1px solid var(--btn-secondary-border);
+    color: var(--btn-secondary-text);
 }
 
 .btn-secondary:hover {
-    border-color: #555;
-    background: #1a1a1a;
-    color: #fff;
+    border-color: var(--btn-secondary-hover-border);
+    background: var(--btn-secondary-hover-bg);
+    color: var(--btn-secondary-hover-text);
 }
 
 
@@ -221,7 +324,8 @@ a {
 #Skills,
 #Contact {
     padding: 7rem 0;
-    border-top: 1px solid #252525;
+    border-top: 1px solid var(--border-color);
+    transition: border-color 0.3s ease;
 }
 
 
@@ -255,26 +359,27 @@ h2::after {
 }
 
 .project-card {
-    background: #171717;
+    background: var(--card-bg);
 
-    border: 1px solid #292929;
+    border: 1px solid var(--card-border);
 
     border-radius: 12px;
 
     padding: 1.8rem;
 
-    transition: 0.25s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
 }
 
 .project-card:hover {
-    border-color: #444;
+    border-color: var(--card-border-hover);
 
     transform: translateY(-4px);
 }
 
 .project-card h3 {
-    color: #fff;
+    color: var(--card-title-color);
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
 .project-card p {
@@ -285,14 +390,15 @@ h2::after {
 .project-card a {
     display: inline-block;
 
-    color: #4da3ff;
+    color: var(--primary-color);
 
     font-size: 0.85rem;
     font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 .project-card a:hover {
-    color: #78baff;
+    color: var(--primary-hover);
 }
 
 
@@ -316,15 +422,16 @@ h2::after {
 
     padding: 0.35rem 0.65rem;
 
-    background: #222;
+    background: var(--tech-tag-bg);
 
-    border: 1px solid #303030;
+    border: 1px solid var(--tech-tag-border);
 
     border-radius: 6px;
 
-    color: #aaa;
+    color: var(--tech-tag-text);
 
     font-size: 0.75rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -357,13 +464,14 @@ h2::after {
 }
 
 .skill-card {
-    background: #171717;
+    background: var(--card-bg);
 
-    border: 1px solid #292929;
+    border: 1px solid var(--card-border);
 
     border-radius: 12px;
 
     padding: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .skill-card h3 {
@@ -380,7 +488,8 @@ h2::after {
 
     object-fit: contain;
 
-    filter: invert(1);
+    filter: var(--icon-filter);
+    transition: filter 0.3s ease;
 }
 
 
@@ -413,23 +522,23 @@ h2::after {
 
     padding: 0.75rem 1rem;
 
-    border: 1px solid #292929;
+    border: 1px solid var(--card-border);
 
-    background: #171717;
+    background: var(--card-bg);
 
     border-radius: 8px;
 
-    color: #bbb;
+    color: var(--text-muted);
 
     font-size: 0.85rem;
 
-    transition: 0.2s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .contact-links a:hover {
-    border-color: #444;
+    border-color: var(--card-border-hover);
 
-    color: #fff;
+    color: var(--card-title-color);
 
     transform: translateY(-2px);
 }
@@ -444,16 +553,17 @@ h2::after {
 }
 
 ::-webkit-scrollbar-track {
-    background: #111;
+    background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: var(--scrollbar-thumb);
     border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: var(--scrollbar-thumb-hover);
 }
 
 
@@ -462,8 +572,8 @@ h2::after {
 ================================ */
 
 ::selection {
-    background: #4da3ff;
-    color: #111;
+    background: var(--selection-bg);
+    color: var(--selection-text);
 }
 
 
@@ -477,9 +587,10 @@ h2::after {
         padding: 0 1rem;
     }
 
-    .language-switcher {
+    .top-controls {
         top: 1rem;
         right: 1rem;
+        gap: 0.5rem;
     }
 
     .hero {
